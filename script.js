@@ -1,3 +1,4 @@
+var $ = require("jquery");
 var audioCtx;
 var volume;
 var osc;

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Limpuls/Javascript-Synth/issues"
   },
-  "homepage": "https://github.com/Limpuls/Javascript-Synth#readme"
+  "homepage": "https://github.com/Limpuls/Javascript-Synth#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }
