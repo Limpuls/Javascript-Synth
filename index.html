@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="src/css/style.css">
 </head>
 <body>
   <div class="header"><h1>Javascript Oscillator</h1></div>
@@ -21,8 +21,11 @@
       <button id="square" class="btn btn-info btn-sm" value="square">Square</button>
       <button id="triangle" class="btn btn-info btn-sm" value="triangle">Triangle</button>
     <div class="processing">
-      <label for='freq'>Frequency <span class='freq' id="freq"></span>
+     <!--<label for='freq'>Frequency <span class='freq' id="freq"></span>
         <input class='freq-slider' id="freqSlider" name='freq' type='range' min='0' max='20000' step='1' value='220' />
+      </label>-->
+      <label for='freq'>Frequency <span class='freq' id="freq"></span>
+      <div id="dial"></div>
       </label>
       <label for='detune'>Detune <span class='detune' id="detune">0</span>
         <input class='detune-slider' id="detuneSlider" name='detune' type='range' min='-1000' max='1000' step='1' value='0' />
@@ -76,9 +79,10 @@
 </div>
 </div>
 </div>
- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script src="bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="src/js/NexusUI.js"></script>
+  <script src="dist/bundle.js"></script>
 </body>
 </html>

@@ -1,4 +1,14 @@
 var $ = require("jquery");
+var dial = new Nexus.Dial('#dial',{
+  'size': [75,75],
+  'interaction': 'radial', // "radial", "vertical", or "horizontal"
+  'mode': 'relative', // "absolute" or "relative"
+  'min': 0,
+  'max': 20000,
+  'step': 1,
+  'value': 220
+})
+var knob = document.getElementById("dial");
 var audioCtx;
 var volume;
 var osc;
@@ -50,7 +60,7 @@ function init() {
   osc.connect(filter);
   volume.connect(audioCtx.destination);
   booleanVal = false;
-  osc.frequency.value = freqSlider.value
+  osc.frequency.value = dial.value
   osc.start();
   gainDisplay.innerHTML = gainSlider.value;
   //localStorage.setItem("test", "Hello World");
@@ -75,9 +85,10 @@ function initIfLocalStorage(presetsArr) {
 
   for (var i = 0; i < presetsArr.length; i++) {
     if (presetsArr[i].freq) {
-    osc.frequency.value = presetsArr[i].freq;
-    freqSlider.value = presetsArr[i].freq;
-    freqDisplay.innerHTML = freqSlider.value;
+      osc.frequency.value = presetsArr[i].freq;
+      knob.value = presetsArr[i].freq;
+      dial.value = presetsArr[i].freq;
+      freqDisplay.innerHTML = knob.value;
     }
     if (presetsArr[i].detune) {
     osc.detune.value = presetsArr[i].detune;
@@ -146,9 +157,10 @@ function initIfLocalStorage(presetsArr) {
 function initPreset() {
   //stop();
   osc.type = "sine";
-  freqSlider.value = "220";
-  osc.frequency.value = freqSlider.value;
-  freqDisplay.innerHTML = freqSlider.value;
+  knob.value = "220";
+  dial.value = "220";
+  osc.frequency.value = knob.value;
+  freqDisplay.innerHTML = knob.value;
   volume.gain.value = 0.2;
   gainSlider.value = volume.gain.value;
   gainDisplay.innerHTML = gainSlider.value;
@@ -253,9 +265,9 @@ function addEventListenerBySelector(selector, e, fn) {
   }
 }
 
-  freqSlider.addEventListener("click", function(e) {
-    osc.frequency.value = this.value;
-    freqDisplay.innerHTML = this.value;
+  knob.addEventListener("click", function(e) {
+    osc.frequency.value = dial.value;
+    freqDisplay.innerHTML = dial.value;
     bookmark["freq"] = osc.frequency.value;
     presetsArr = JSON.parse(localStorage.getItem('presetsArr')) || [];
     presetsArr.push(bookmark);
