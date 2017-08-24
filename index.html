@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="header"><h1>Javascript Oscillator</h1></div>
+  <div class="container-fluid">
+  <div class="row">
+  <div class="synth_container justify-content-center">
+    <div class="play_controls">
+      <button id="play" class="btn btn-primary btn-sm">Play</button>
+      <button id="stop" class="btn btn-warning btn-sm">Stop</button>
+      <button id="reset" class="btn btn-danger btn-sm">Reset preset</button>
+    </div>
+    <div class="waveshapes">
+      <button id="sine" class="btn btn-info btn-sm" value="sine">Sine</button>
+      <button id="saw" class="btn btn-info btn-sm" value="sawtooth">Sawtooth</button>
+      <button id="square" class="btn btn-info btn-sm" value="square">Square</button>
+      <button id="triangle" class="btn btn-info btn-sm" value="triangle">Triangle</button>
+    <div class="processing">
+      <label for='freq'>Frequency <span class='freq' id="freq"></span>
+        <input class='freq-slider' id="freqSlider" name='freq' type='range' min='0' max='20000' step='1' value='220' />
+      </label>
+      <label for='detune'>Detune <span class='detune' id="detune">0</span>
+        <input class='detune-slider' id="detuneSlider" name='detune' type='range' min='-1000' max='1000' step='1' value='0' />
+      </label>
+      <div class="filterSection">
+        <label for="mydropdown" datalabel="mydropdown">Filter:</label>
+        <select id="dropdown" name="mydropdown">
+            <option value="allpass">None</option>
+            <option value="lowpass">Lowpass</option>
+            <option value="highpass">Highpass</option>
+            <option value="bandpass">Bandpass</option>
+            <option value="peaking">Peaking</option>
+        </select>
+        <div><label for='filter-freq'>Filter Freq <span class='filter-freq' id="filter-freq"></span>
+          <input class='filter-freq-slider' id="filter-freqSlider" name='filter-freq' type='range' min='0' max='20000' step='1' value='140' />
+        </label></div>
+        <div><label for='Q'>Q <span class='Q' id="Q"></span>
+          <input class='Q-slider' id="QSlider" name='Qfreq' type='range' min='0' max='100' step='1' value='0' />
+        </label></div>
+        <div><label for='freq-gain'>Frequency Gain <span class='freq-gain' id="freq-gain"></span>
+          <input class='freq-gain-slider' id="freq-gainSlider" name='freq-gain' type='range' min='-40' max='40' step='1' value='0' />
+        </label></div>
+      </div>
+      <div class="gainSection">
+        <label for='gain'>Gain <span class='gain' id="gain">1</span>
+          <input class='gain-slider' id="gainSlider" name='gain' type='range' min='0' max='1' step='0.1' value='0.2' />
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="pianoKeyboard">
+    <button id="octaveUp" class="btn btn-primary btn-sm" value="off">Octave Up</button>
+    <button id="octaveDown" class="btn btn-danger btn-sm" value="off">Octave Down</button>
+    <div id="octaveNum" data-value='0'>Octave 0</div>
+    <ul class="set">
+      <li class="white b note" id="whiteB" value="174.61" data-default="174.61"></li>
+      <li class="black as note" id="whiteAs" value="185.00" data-default="185.00"></li>
+      <li class="white a note" id="whiteA" value="196.00" data-default="196.00"></li>
+      <li class="black gs note" id="blackGs" value="207.65" data-default="207.65"></li>
+      <li class="white g note" id="" value="220.00" data-default="220.00"></li>
+      <li class="black fs note" id="" value="233.08" data-default="233.08"></li>
+      <li class="white f note" id="" value="246.94" data-default="246.94"></li>
+      <li class="white e note" id="" value="261.63" data-default="261.63"></li>
+  	  <li class="black ds note" id="" value="277.18" data-default="277.18"></li>
+	    <li class="white d note" id="" value="293.66" data-default="293.66"></li>
+	    <li class="black cs note" id="" value="311.13" data-default="311.13"></li>
+	    <li class="white c note" id="" value="329.63" data-default="329.63"></li>
+    </ul>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+ <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
