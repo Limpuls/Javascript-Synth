@@ -1,0 +1,19 @@
+{
+  "name": "synth",
+  "version": "1.0.0",
+  "description": "Javascript virtual synthesizer using WebAPI",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Limpuls/Javascript-Synth.git"
+  },
+  "author": "Laimis Petravicius",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Limpuls/Javascript-Synth/issues"
+  },
+  "homepage": "https://github.com/Limpuls/Javascript-Synth#readme"
+}
