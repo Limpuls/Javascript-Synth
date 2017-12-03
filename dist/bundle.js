@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var $ = __webpack_require__(1);
-var dial = new Nexus.Dial('#dial',{
+/*var dial = new Nexus.Dial('#dial',{
   'size': [75,75],
   'interaction': 'radial', // "radial", "vertical", or "horizontal"
   'mode': 'relative', // "absolute" or "relative"
@@ -76,7 +76,7 @@ var dial = new Nexus.Dial('#dial',{
   'max': 20000,
   'step': 1,
   'value': 220
-})
+})*/
 var knob = document.getElementById("dial");
 var audioCtx;
 var volume;
