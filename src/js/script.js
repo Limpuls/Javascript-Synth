@@ -284,6 +284,7 @@ function addEventListenerBySelector(selector, e, fn) {
   })
 
   gainSlider.addEventListener("click", function(e) {
+    audioCtx.resume();
     volume.gain.value = this.value;
     gainDisplay.innerHTML = this.value;
     console.log(this.value);
